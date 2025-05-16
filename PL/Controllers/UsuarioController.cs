@@ -4,9 +4,8 @@ namespace PL.Controllers
 {
     public class UsuarioController : Controller
     {
-        public IActionResult Index()
+        public IActionResult GetAll()
         {
-
             return View();
         }
     }

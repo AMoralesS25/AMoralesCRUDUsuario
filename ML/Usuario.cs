@@ -22,15 +22,6 @@ namespace ML
         [Required(ErrorMessage = "Escribe el apellido materno")]
         [RegularExpression(@"^[A-Za-z ]{1,50}$", ErrorMessage = "El apellido materno solo debe tener letras")]
         public string ApellidoMaterno { get; set; }
-        [DisplayName("Email")]
-        [Required(ErrorMessage = "Escribe el email")]
-        [RegularExpression(@"^[\w+._-]{4,254}@[a-zA-Z0-9.-]{2,254}\.[a-zA-Z]{2,10}$", ErrorMessage = "El email no es valido")]
-        public string Email { get; set; }
-        [DisplayName("Password")]
-        [Required(ErrorMessage = "Escribe el password")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])([A-Za-z\d$@@$!%*?&]|[^ ]){8,50}$", ErrorMessage = "El password debe contener al menos un número, una mayuscula y un signo")]
-        public string Password { get; set; }
-        //public DateTime FechaNacimiento { get; set; }
         [DisplayName("Fecha de nacimiento")]
         [Required(ErrorMessage = "Escribe la fecha de nacimiento")]
         [RegularExpression(@"\d{1,2}\/\d{1,2}\/\d{2,4}", ErrorMessage = "La fecha debe de incluir numeros")]
@@ -50,10 +41,7 @@ namespace ML
         [Required(ErrorMessage = "Escribe el CURP")]
         [RegularExpression(@"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$", ErrorMessage = "El curp no esta correcto")]
         public string CURP { get; set; }
-        public byte[] Imagen { get; set; }
-        public string ImagenBase64 { get; set; }
-        public ML.Rol Rol { get; set; }
-        public ML.Direccion Direccion { get; set; }
-        public List<object> Usuarios { get; set; }
+        public List<Object>? Usuarios { get; set; }
+        public ML.Login Login { get; set; }
     }
 }
